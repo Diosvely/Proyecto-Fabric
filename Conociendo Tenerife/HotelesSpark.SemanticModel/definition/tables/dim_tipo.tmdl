@@ -1,0 +1,34 @@
+table dim_tipo
+	lineageTag: ae036a06-2923-4f4d-a7ec-bc6dd565063c
+	sourceLineageTag: [Gold].[dim_tipo]
+
+	column Id_tipo
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3d362671-273a-49ec-97ff-469ae63a6786
+		sourceLineageTag: Id_tipo
+		summarizeBy: none
+		sourceColumn: Id_tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 2c59d787-ceeb-404f-9035-ce1f55ad23f7
+		sourceLineageTag: tipo
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_tipo = entity
+		mode: directLake
+		source
+			entityName: dim_tipo
+			schemaName: Gold
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

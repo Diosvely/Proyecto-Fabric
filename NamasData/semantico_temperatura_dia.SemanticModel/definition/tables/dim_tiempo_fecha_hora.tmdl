@@ -1,0 +1,142 @@
+table dim_tiempo_fecha_hora
+	lineageTag: 60e45429-ccfd-4ca1-86ae-3fdac88ee3a5
+	sourceLineageTag: [dbo].[dim_tiempo_fecha_hora]
+
+	column time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c1092ba3-2105-49f9-ae65-738e5cbb0247
+		sourceLineageTag: time
+		summarizeBy: none
+		sourceColumn: time
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 8daf5fa2-f3c8-4eb1-a1cc-425618f865c6
+		sourceLineageTag: fecha
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column hora
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fa79fe6f-c568-4d0f-a414-4c7c7ecb659a
+		sourceLineageTag: hora
+		summarizeBy: none
+		sourceColumn: hora
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 590da8b9-570a-411c-ac7a-31120037c833
+		sourceLineageTag: anio
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a779890b-8237-4f6b-a2c7-160df5ee30f3
+		sourceLineageTag: mes
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d7769c93-0c90-4323-90c8-a148f37049d7
+		sourceLineageTag: dia
+		summarizeBy: none
+		sourceColumn: dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_mes
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a6ab78f3-1b27-4cfc-a4ab-e3712853d807
+		sourceLineageTag: nombre_mes
+		summarizeBy: none
+		sourceColumn: nombre_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 681258c6-c59b-4562-936c-ccf8bb326eae
+		sourceLineageTag: trimestre
+		summarizeBy: none
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column semana_anio
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 50b8e01a-1ff9-487f-945d-1fd075009699
+		sourceLineageTag: semana_anio
+		summarizeBy: none
+		sourceColumn: semana_anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_semana
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 00e93458-0c5e-43c3-ac48-44572f671643
+		sourceLineageTag: dia_semana
+		summarizeBy: none
+		sourceColumn: dia_semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_dia
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d0b37ba8-c970-42ba-8fcb-d09a5cdada8e
+		sourceLineageTag: nombre_dia
+		summarizeBy: none
+		sourceColumn: nombre_dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column dia_corr_anual
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 16966328-a08c-4934-9c65-b13db7115e78
+		sourceLineageTag: dia_corr_anual
+		summarizeBy: none
+		sourceColumn: dia_corr_anual
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_tiempo_fecha_hora = entity
+		mode: directLake
+		source
+			entityName: dim_tiempo_fecha_hora
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

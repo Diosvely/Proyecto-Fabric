@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "lh_crudo_FP20C14"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "45fca96b-ecc3-9d97-4dad-5d8ff6c2679f"
+  }
+}

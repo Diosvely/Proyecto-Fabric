@@ -1,0 +1,404 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "dim_departamento",
+        "sourceLineageTag": "[Gold].[dim_departamento]",
+        "columns": [
+          {
+            "name": "Id_dpto",
+            "dataType": "int64",
+            "sourceColumn": "Id_dpto",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Id_dpto",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Departmento",
+            "dataType": "string",
+            "sourceColumn": "Departmento",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Departmento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_departamento",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_genero",
+        "sourceLineageTag": "[Gold].[dim_genero]",
+        "columns": [
+          {
+            "name": "Id_genero",
+            "dataType": "int64",
+            "sourceColumn": "Id_genero",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Id_genero",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Género",
+            "dataType": "string",
+            "sourceColumn": "Género",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Género",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_genero",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "tabla_completa_HR",
+        "sourceLineageTag": "[Silver].[tabla_completa_HR]",
+        "columns": [
+          {
+            "name": "ID Empleado",
+            "dataType": "string",
+            "sourceColumn": "ID Empleado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ID Empleado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nombre Completo",
+            "dataType": "string",
+            "sourceColumn": "Nombre Completo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nombre Completo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Puesto de trabajo",
+            "dataType": "string",
+            "sourceColumn": "Puesto de trabajo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Puesto de trabajo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Departmento",
+            "dataType": "string",
+            "sourceColumn": "Departmento",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Departmento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Unidad de Negocio",
+            "dataType": "string",
+            "sourceColumn": "Unidad de Negocio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Unidad de Negocio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Género",
+            "dataType": "string",
+            "sourceColumn": "Género",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Género",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Etnia",
+            "dataType": "string",
+            "sourceColumn": "Etnia",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Etnia",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Edad",
+            "dataType": "int64",
+            "sourceColumn": "Edad",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Edad",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fecha Contratación",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha Contratación",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Fecha Contratación",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Salario Anual",
+            "dataType": "int64",
+            "sourceColumn": "Salario Anual",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Salario Anual",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Bono %",
+            "dataType": "double",
+            "sourceColumn": "Bono %",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Bono %",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "País",
+            "dataType": "string",
+            "sourceColumn": "País",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "País",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Ciudad",
+            "dataType": "string",
+            "sourceColumn": "Ciudad",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Ciudad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fecha Salida",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha Salida",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Fecha Salida",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Latitud",
+            "dataType": "double",
+            "sourceColumn": "Latitud",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Latitud",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Longitud",
+            "dataType": "double",
+            "sourceColumn": "Longitud",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Longitud",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tabla_completa_HR",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+table fact_sitios
+	lineageTag: 81d30b6f-b7f2-43b7-9f5f-8bdbefa47e27
+	sourceLineageTag: [Gold].[fact_sitios]
+
+	column Id_fact_sitios
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 70837afa-e16a-40b5-8642-e46356a55931
+		sourceLineageTag: Id_fact_sitios
+		summarizeBy: sum
+		sourceColumn: Id_fact_sitios
+
+		annotation SummarizationSetBy = Automatic
+
+	column FK_Id_municipio
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1899afcd-9f41-42dc-be15-f06ce4d64f30
+		sourceLineageTag: FK_Id_municipio
+		summarizeBy: none
+		sourceColumn: FK_Id_municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column FK_Id_tipo
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 052d5dc0-f5fa-4e39-99aa-85a236aac97f
+		sourceLineageTag: FK_Id_tipo
+		summarizeBy: none
+		sourceColumn: FK_Id_tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column FK_Id_modalidad
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 004013b1-b206-4944-aa57-78d8bb8cf458
+		sourceLineageTag: FK_Id_modalidad
+		summarizeBy: none
+		sourceColumn: FK_Id_modalidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column FK_Id_codigopostal
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 854eae05-a028-4e4a-97f1-6733153a4514
+		sourceLineageTag: FK_Id_codigopostal
+		summarizeBy: none
+		sourceColumn: FK_Id_codigopostal
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 8df98708-5a98-4bc0-adf6-073212cbfeb6
+		sourceLineageTag: nombre
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column direccion
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: d111e78b-f45c-410b-bbc9-8cf662e2c9f2
+		sourceLineageTag: direccion
+		summarizeBy: none
+		sourceColumn: direccion
+
+		annotation SummarizationSetBy = Automatic
+
+	column aforo_interior
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 848f016c-0c32-4b0c-9e7b-051780532037
+		sourceLineageTag: aforo_interior
+		summarizeBy: sum
+		sourceColumn: aforo_interior
+
+		annotation SummarizationSetBy = Automatic
+
+	column aforo_terraza
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 11099b16-c51e-4483-b0e7-cf0d6cdb5f8f
+		sourceLineageTag: aforo_terraza
+		summarizeBy: sum
+		sourceColumn: aforo_terraza
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_sitios = entity
+		mode: directLake
+		source
+			entityName: fact_sitios
+			schemaName: Gold
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

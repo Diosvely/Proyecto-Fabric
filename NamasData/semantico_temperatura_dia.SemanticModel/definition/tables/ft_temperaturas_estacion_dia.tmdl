@@ -1,0 +1,60 @@
+table ft_temperaturas_estacion_dia
+	lineageTag: 0ee2aa66-a019-44d1-8ced-568cd669aa5e
+	sourceLineageTag: [dbo].[ft_temperaturas_estacion_dia]
+
+	column fecha
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6bd64b2c-c556-4851-ad34-b82d035d0a3a
+		sourceLineageTag: fecha
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tmaxima
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 38865406-54cf-452e-962a-2a5ffed53381
+		sourceLineageTag: Tmaxima
+		summarizeBy: sum
+		sourceColumn: Tmaxima
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Tminima
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 5c838590-fae2-4c10-bd72-907d596cb83d
+		sourceLineageTag: Tminima
+		summarizeBy: sum
+		sourceColumn: Tminima
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CodigoNacional
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 553b33d8-0664-4da3-8593-78d339863daa
+		sourceLineageTag: CodigoNacional
+		summarizeBy: sum
+		sourceColumn: CodigoNacional
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition ft_temperaturas_estacion_dia = entity
+		mode: directLake
+		source
+			entityName: ft_temperaturas_estacion_dia
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

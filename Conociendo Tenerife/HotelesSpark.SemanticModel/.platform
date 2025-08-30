@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "HotelesSpark"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1cdcab6c-a8d4-8518-4731-35a91aff6f6d"
+  }
+}

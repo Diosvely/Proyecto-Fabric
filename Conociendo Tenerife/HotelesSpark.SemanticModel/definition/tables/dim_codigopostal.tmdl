@@ -1,0 +1,36 @@
+table dim_codigopostal
+	lineageTag: bfc0ea2e-af82-41ef-85b3-ab22dbd00f71
+	sourceLineageTag: [Gold].[dim_codigopostal]
+
+	column Id_codigopostal
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5776f9f8-8ed2-466b-9f50-85b72dcc36c6
+		sourceLineageTag: Id_codigopostal
+		summarizeBy: none
+		sourceColumn: Id_codigopostal
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_postal
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b0592ca3-5f0c-4e6f-8553-75f853791f01
+		sourceLineageTag: codigo_postal
+		summarizeBy: none
+		sourceColumn: codigo_postal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_codigopostal = entity
+		mode: directLake
+		source
+			entityName: dim_codigopostal
+			schemaName: Gold
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

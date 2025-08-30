@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "lh_crudo_tenerife"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "37eb3fc4-69d7-8585-41e2-fd082dcda3d3"
+  }
+}

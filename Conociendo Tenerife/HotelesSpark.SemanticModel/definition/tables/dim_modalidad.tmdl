@@ -1,0 +1,34 @@
+table dim_modalidad
+	lineageTag: 2717bbc6-7f02-4437-bbbd-2d953e2a43a7
+	sourceLineageTag: [Gold].[dim_modalidad]
+
+	column Id_modalidad
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ad8a18e5-b53d-4375-8c08-d4263a65c20c
+		sourceLineageTag: Id_modalidad
+		summarizeBy: none
+		sourceColumn: Id_modalidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column modalidad
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: e525f413-5c7f-4418-bad5-b4f8d8e20d0f
+		sourceLineageTag: modalidad
+		summarizeBy: none
+		sourceColumn: modalidad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_modalidad = entity
+		mode: directLake
+		source
+			entityName: dim_modalidad
+			schemaName: Gold
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

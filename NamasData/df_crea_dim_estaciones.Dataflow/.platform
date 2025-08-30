@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "df_crea_dim_estaciones"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "649042ba-04e4-b9c2-4a13-6e077ddbc2bb"
+  }
+}

@@ -1,0 +1,4 @@
+relationship 514f073c-3571-1f17-cdb3-e7280f74715b
+	fromColumn: ft_temperaturas_estacion_dia.fecha
+	toColumn: dim_tiempo_fecha_hora.fecha
+

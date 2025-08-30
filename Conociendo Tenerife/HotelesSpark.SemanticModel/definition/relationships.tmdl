@@ -1,0 +1,16 @@
+relationship 20b28b6b-62f9-17d7-66bf-eeb4248d4822
+	fromColumn: fact_sitios.FK_Id_codigopostal
+	toColumn: dim_codigopostal.Id_codigopostal
+
+relationship 261988e2-2b0b-bb59-4d9f-8528fa956071
+	fromColumn: fact_sitios.FK_Id_modalidad
+	toColumn: dim_modalidad.Id_modalidad
+
+relationship f92283ed-f3f2-6483-7295-cc6fb1016c98
+	fromColumn: fact_sitios.FK_Id_municipio
+	toColumn: dim_municipio.Id_municipio
+
+relationship 142852b6-e492-8ce9-9ca6-fb3047fa5dac
+	fromColumn: fact_sitios.FK_Id_tipo
+	toColumn: dim_tipo.Id_tipo
+

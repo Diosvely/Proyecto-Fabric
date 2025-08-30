@@ -1,0 +1,549 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "dim_codigopostal",
+        "sourceLineageTag": "[Gold].[dim_codigopostal]",
+        "columns": [
+          {
+            "name": "Id_codigopostal",
+            "dataType": "int64",
+            "sourceColumn": "Id_codigopostal",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Id_codigopostal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "codigo_postal",
+            "dataType": "double",
+            "sourceColumn": "codigo_postal",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "codigo_postal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_codigopostal",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_modalidad",
+        "sourceLineageTag": "[Gold].[dim_modalidad]",
+        "columns": [
+          {
+            "name": "Id_modalidad",
+            "dataType": "int64",
+            "sourceColumn": "Id_modalidad",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Id_modalidad",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "modalidad",
+            "dataType": "string",
+            "sourceColumn": "modalidad",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "modalidad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_modalidad",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_municipio",
+        "sourceLineageTag": "[Gold].[dim_municipio]",
+        "columns": [
+          {
+            "name": "Id_municipio",
+            "dataType": "int64",
+            "sourceColumn": "Id_municipio",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Id_municipio",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "municipio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_municipio",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_tipo",
+        "sourceLineageTag": "[Gold].[dim_tipo]",
+        "columns": [
+          {
+            "name": "Id_tipo",
+            "dataType": "int64",
+            "sourceColumn": "Id_tipo",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Id_tipo",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tipo",
+            "dataType": "string",
+            "sourceColumn": "tipo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "tipo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_tipo",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "fact_sitios",
+        "sourceLineageTag": "[Gold].[fact_sitios]",
+        "columns": [
+          {
+            "name": "Id_fact_sitios",
+            "dataType": "int64",
+            "sourceColumn": "Id_fact_sitios",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Id_fact_sitios",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FK_Id_municipio",
+            "dataType": "int64",
+            "sourceColumn": "FK_Id_municipio",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FK_Id_municipio",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FK_Id_tipo",
+            "dataType": "int64",
+            "sourceColumn": "FK_Id_tipo",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FK_Id_tipo",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FK_Id_modalidad",
+            "dataType": "int64",
+            "sourceColumn": "FK_Id_modalidad",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FK_Id_modalidad",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FK_Id_codigopostal",
+            "dataType": "int64",
+            "sourceColumn": "FK_Id_codigopostal",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FK_Id_codigopostal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "nombre",
+            "dataType": "string",
+            "sourceColumn": "nombre",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "nombre",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "direccion",
+            "dataType": "string",
+            "sourceColumn": "direccion",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "direccion",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "aforo_interior",
+            "dataType": "int64",
+            "sourceColumn": "aforo_interior",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "aforo_interior",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "aforo_terraza",
+            "dataType": "int64",
+            "sourceColumn": "aforo_terraza",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "aforo_terraza",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "fact_sitios",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "tablaHoteles",
+        "sourceLineageTag": "[Silver].[tablaHoteles]",
+        "columns": [
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "municipio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "modalidad",
+            "dataType": "string",
+            "sourceColumn": "modalidad",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "modalidad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tipo",
+            "dataType": "string",
+            "sourceColumn": "tipo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "tipo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "nombre",
+            "dataType": "string",
+            "sourceColumn": "nombre",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "nombre",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "direccion",
+            "dataType": "string",
+            "sourceColumn": "direccion",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "direccion",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "codigo_postal",
+            "dataType": "double",
+            "sourceColumn": "codigo_postal",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "codigo_postal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "aforo_interior",
+            "dataType": "int64",
+            "sourceColumn": "aforo_interior",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "aforo_interior",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "aforo_terraza",
+            "dataType": "int64",
+            "sourceColumn": "aforo_terraza",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "aforo_terraza",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tablaHoteles",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Silver"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}
