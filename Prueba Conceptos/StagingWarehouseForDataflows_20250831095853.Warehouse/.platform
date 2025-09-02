@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Lakehouse",
-    "displayName": "lh_bronce_Finanzas"
+    "type": "Warehouse",
+    "displayName": "StagingWarehouseForDataflows_20250831095853"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "ae12261a-b62a-abbf-41c3-7f7e4cdf4fa7"
+    "logicalId": "33735694-8fee-9c7d-498f-726eeb2ca68e"
   }
 }
