@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Dataflow",
-    "displayName": "df_cargardatos_lh"
+    "type": "Warehouse",
+    "displayName": "StagingWarehouseForDataflows_20250824221644"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "cf2e3574-ebdc-bcae-4d58-ce8d7b28c057"
+    "logicalId": "973ea9ec-e49a-8b13-415c-a5d14b67be69"
   }
 }
